@@ -34,5 +34,18 @@ class Extvagas extends CI_Controller
 
 		redirect('extvagas','refresh');
 	}
+
+	public function visualizarVaga($idVaga){
+		$dados = array(
+			'vaga' => $this->extvaga_model->visualizarVagaExt($idVaga)
+			);
+
+		//var_dump($dados);
+
+		$this->load->view('layout/topoADM');
+		$this->load->view('cliente/extensaoVisVagas', $dados);
+		$this->load->view('layout/rodape');
+	}
+
 }
 ?>
