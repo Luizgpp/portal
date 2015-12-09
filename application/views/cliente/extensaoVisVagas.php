@@ -117,76 +117,36 @@
 			</div>
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 				<h1>Inscritos</h1>
-				<form action="" method="POST" role="form">
-					<div class="inscritos col-xs-8 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-						<spam class="inscritos-aprovar" align="center">
-							<strong>Aprovar</strong>
-							<div class="checkbox" >
-								<label>
-									<input class="big-checkbox" type="checkbox" value="">
-								</label>
-							</div>							
-						</spam>
-						<div class="descricao-inscrito">
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Nome: </spam>Luiz Pereira
-							</div>
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Prontuário: </spam> 1310305
-							</div>
-						</div>
-						<div class="descricao-inscrito">
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Semestre:</spam> 2º Semestre
-							</div>
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Curso: </spam> TADS
-							</div>
-						</div>
-					</div>
+									
+				<?php echo form_open('extvagas/aprovarAluno'); ?>
+				<?php foreach ($inscritos as $inscrito) { ?>
 
 					<div class="inscritos col-xs-8 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 						<spam class="inscritos-aprovar" align="center">
 							<strong>Aprovar</strong>
-							<div class="checkbox" >
-								<label>
-									<input class="big-checkbox" type="checkbox" value="">
-								</label>
-							</div>							
-						</spam>
-						<div class="descricao-inscrito">
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Nome: </spam>Luiz Pereira
-							</div>
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Prontuário: </spam> 1310305
-							</div>
-						</div>
-						<div class="descricao-inscrito">
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Semestre:</spam> 2º Semestre
-							</div>
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Curso: </spam> TADS
-							</div>
-						</div>
-					</div>
 
-					<div class="inscritos col-xs-8 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-						<spam class="inscritos-aprovar" align="center">
-							<strong>Aprovar</strong>
+							<?php if ($inscrito->selecionado) { ?>
 							<div class="checkbox" >
 								<label>
-									<input class="big-checkbox" type="checkbox" value="">
+									<input class="big-checkbox" type="checkbox" name="selecionado" checked disabled>
 								</label>
-							</div>							
+							</div>
+							<?php }else{ ?>	
+							<div class="checkbox" >
+								<label>
+									<input class="big-checkbox" type="checkbox" name="selecionado">
+								</label>
+							</div>
+							<?php } ?>
+
 						</spam>
 						<div class="descricao-inscrito">
 							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Nome: </spam>Luiz Pereira
+								<spam>Nome: </spam><?php echo $inscrito->nome; ?>
 							</div>
 							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Prontuário: </spam> 1310305
+								<spam>Prontuário: </spam> <?php echo $inscrito->prontuario; ?>
+
 							</div>
 						</div>
 						<div class="descricao-inscrito">
@@ -194,15 +154,24 @@
 								<spam>Semestre:</spam> 2º Semestre
 							</div>
 							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-								<spam>Curso: </spam> TADS
+								<spam>Curso: </spam> <?php echo $inscrito->sigla; ?>
 							</div>
+
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" hidden>
+								<input type="text" name="alunoid" value="<?php echo $inscrito->alunos_id; ?>">
+								<input type="text" name="vagaid" value="<?php echo $inscrito->vagas_id; ?>">
+							</div>
+
 						</div>
 					</div>
+				<?php } ?>
+
 					<div class="btn-enviar col-xs-1 col-sm-1 col-md-1 col-lg-1 col-sm-offset-9 col-md-offset-9 col-lg-offset-9">
 						<button type="submit" class="btn btn-success">Submit</button>	
 					</div>
 					
 				</form>
+
 			</div>
 		</div>
 	</div>

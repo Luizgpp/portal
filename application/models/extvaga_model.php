@@ -124,6 +124,27 @@ class Extvaga_model extends CI_Model
 		return $vagas;
 	}
 
+	public function inscritos($idVaga){
+		$this->db->select('va.vagas_id, va.alunos_id, va.selecionado, a.prontuario, a.nome, c.sigla');
+		$this->db->from('vagas_alunos va');
+		$this->db->join('alunos a', 'va.alunos_id = a.id');
+		$this->db->join('cursos c', 'c.id = a.cursos_id');
+		$this->db->where('vagas_id', $idVaga);
+		$this->db->order_by('a.prontuario');
+
+		$query1 = $this->db->get();
+		$inscritos = $query1->result();
+
+		return $inscritos;
+	}
+
+	public function aprovarInscrito($dados, $alunosId, $vagasId){
+		$this->db->where('alunos_id', $alunosId);
+		$this->db->where('vagas_id', $vagasId);
+		
+		$this->db->update('vagas_alunos', $dados);
+	}
+
 }
 
 ?>
