@@ -34,5 +34,38 @@ class Extvagas extends CI_Controller
 
 		redirect('extvagas','refresh');
 	}
+
+	public function visualizarVaga($idVaga){
+		$dados = array(
+			'vaga' => $this->extvaga_model->visualizarVagaExt($idVaga),
+			'inscritos' => $this->extvaga_model->inscritos($idVaga)
+			);
+
+		$this->load->view('layout/topoADM');
+		$this->load->view('cliente/extensaoVisVagas', $dados);
+		$this->load->view('layout/rodape');
+	}
+
+	public function aprovarAluno(){
+
+		if ($this->input->post('selecionado')) {
+			$dados = array(
+			'selecionado' => 1,
+			);
+		}else{
+			$dados = array(
+			'selecionado' => 0,
+			);
+		}
+
+		$alunosId = $this->input->post('aluno');
+		$vagasId = $this->input->post('vagaid');
+		
+		//var_dump($alunosId);
+
+		$this->extvaga_model->aprovarInscrito($dados, $alunosId, $vagasId);
+
+	}
+
 }
 ?>
