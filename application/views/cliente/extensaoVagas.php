@@ -11,7 +11,7 @@
 				<!-- ################ Vagas ################## -->
 
 				<div class="vagas">
-					<a href="#">
+					<a href="">
 						<div class="sigla">
 							<span class="inset-text-effect"><?php echo $vaga->sigla_curso; ?></span>
 						</div>
@@ -58,7 +58,7 @@
 				<!-- ################ Vagas ################## -->
 
 				<div class="vagas">
-					<a href="#">
+					<a href="<?php echo site_url('extvagas/visualizarVaga/'.$vaga->id)?>">
 						<div class="sigla">
 							<span class="inset-text-effect"><?php  echo $vaga->sigla_curso; ?></span>
 						</div>
