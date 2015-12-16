@@ -41,8 +41,6 @@ class Extvagas extends CI_Controller
 			'inscritos' => $this->extvaga_model->inscritos($idVaga)
 			);
 
-		//var_dump($dados);
-
 		$this->load->view('layout/topoADM');
 		$this->load->view('cliente/extensaoVisVagas', $dados);
 		$this->load->view('layout/rodape');
@@ -62,14 +60,11 @@ class Extvagas extends CI_Controller
 
 		$alunosId = $this->input->post('aluno');
 		$vagasId = $this->input->post('vagaid');
-
-		//print_r($_POST);
 		
 		//var_dump($alunosId);
 
 		$this->extvaga_model->aprovarInscrito($dados, $alunosId, $vagasId);
 
-		//$this->visualizarVaga($vagasId);
 	}
 
 }
