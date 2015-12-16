@@ -60,10 +60,12 @@ class Extvagas extends CI_Controller
 			);
 		}
 
-		$alunosId = $this->input->post('alunoid');
+		$alunosId = $this->input->post('aluno');
 		$vagasId = $this->input->post('vagaid');
+
+		//print_r($_POST);
 		
-		var_dump($alunosId);
+		//var_dump($alunosId);
 
 		$this->extvaga_model->aprovarInscrito($dados, $alunosId, $vagasId);
 

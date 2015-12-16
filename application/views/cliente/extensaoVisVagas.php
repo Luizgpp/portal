@@ -128,7 +128,7 @@
 							<?php if ($inscrito->selecionado) { ?>
 							<div class="checkbox" >
 								<label>
-									<input class="big-checkbox" type="checkbox" name="selecionado" checked disabled>
+									<input class="big-checkbox" type="checkbox" name="selecionado" checked>
 								</label>
 							</div>
 							<?php }else{ ?>	
@@ -158,7 +158,7 @@
 							</div>
 
 							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" hidden>
-								<input type="text" name="alunoid" value="<?php echo $inscrito->alunos_id; ?>">
+								<input type="text" name="aluno" value="<?php echo $inscrito->alunos_id; ?>">
 								<input type="text" name="vagaid" value="<?php echo $inscrito->vagas_id; ?>">
 							</div>
 
