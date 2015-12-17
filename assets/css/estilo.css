@@ -342,6 +342,12 @@ body{
 .btn-enviar{
 	margin-top: 20px;
 }
+#botaoenviar {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 439px;
+    margin-top: 10px;
+}
 
 .neon-text {
 	color: rgb(64, 126, 10);
