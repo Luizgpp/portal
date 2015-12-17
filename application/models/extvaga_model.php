@@ -94,7 +94,7 @@ class Extvaga_model extends CI_Model
 		$this->db->where('v.aprovado=', 1);
 		$this->db->where('v.ativo=', 1);
 		$this->db->where('v.id=', $idVaga);
-		$this->db->group_by('v.id');
+		//$this->db->group_by('v.id');
 		$query1 = $this->db->get();
 		$vagas = $query1->result();
 
@@ -143,6 +143,61 @@ class Extvaga_model extends CI_Model
 		$this->db->where('vagas_id', $vagasId);
 		
 		$this->db->update('vagas_alunos', $dados);
+	}
+
+	public function editarVaga($idVaga){
+		$this->db->select('*, group_concat(DISTINCT cursos_vagas.cursos_id) AS "cursos_id", group_concat(DISTINCT vagas_beneficios.beneficios_id) as "id_beneficios"');
+		$this->db->from('vagas');
+		$this->db->join('vagas_beneficios','vagas.id = vagas_beneficios.vagas_id','left');
+		$this->db->join('cursos_vagas','vagas.id = cursos_vagas.vagas_id','left');
+		$this->db->where('id', $idVaga);
+		$query = $this->db->get();
+
+		return $query->row();
+	}
+
+	public function updateVaga($dados,$cursos,$beneficios,$vagaId){
+		//inserindo vaga
+		$this->db->where('id', $vagaId);
+		$this->db->update('vagas',$dados);
+
+		//inserindo cursos
+		$dadosCurso = array();
+		if($cursos != null){
+			foreach ($cursos as $curso) {
+				$dados = array(
+					'vagas_id' => $vagaId,
+					'cursos_id' => $curso
+
+					);
+				array_push($dadosCurso, $dados);
+			}
+		}
+
+		$this->db->where('vagas_id', $vagaId);
+		$this->db->delete('cursos_vagas');
+
+		if($dadosCurso != null)
+			$this->db->insert_batch('cursos_vagas',$dadosCurso,'vagas_id');
+		
+		//Inserindo beneficios
+
+		$dadosBeneficio = array();
+		if($beneficios != null){
+			foreach ($beneficios as $beneficio) {
+				$dados1 = array(
+					'vagas_id' => $vagaId,
+					'beneficios_id' => $beneficio
+					);
+				array_push($dadosBeneficio, $dados1);
+			}
+		}
+		$this->db->where('vagas_id', $vagaId);
+		$this->db->delete('vagas_beneficios');
+
+		if($dadosBeneficio != null)
+			$this->db->insert_batch('vagas_beneficios',$dadosBeneficio,'vagas_id');
+		
 	}
 
 }

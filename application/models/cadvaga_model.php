@@ -17,7 +17,7 @@ class Cadvaga_model extends CI_Model
 		$query = $this->db->get('beneficios');
 		return $query->result();
 	}
-
+	
 	public function inserirVaga($vaga,$cursos,$beneficios = NULL){
 		//inserindo vaga
 		$this->db->insert('vagas',$vaga);

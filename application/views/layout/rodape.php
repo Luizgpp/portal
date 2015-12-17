@@ -44,6 +44,27 @@
 			document.getElementById('valorRemunerado').disabled = false;
 		}else{
 			document.getElementById('valorRemunerado').disabled = true;
+			document.getElementById('valorRemunerado').value = '';
+
+		}
+	}
+</script>
+
+<script type="text/javascript">
+	var numCheckBox = $('input[name="cursos[]"]:checked').length;
+	console.log(numCheckBox);
+	$('input[name="cursos[]"').change(function(){
+		numCheckBox = $('input[name="cursos[]"]:checked').length;
+
+	});
+
+	function verificaCheckBox(){
+		if(numCheckBox >= 1){
+			return true;
+		}
+		else{
+			$('#erro').attr('hidden', false);
+			return false;
 		}
 	}
 </script>
