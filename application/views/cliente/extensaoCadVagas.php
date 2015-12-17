@@ -81,7 +81,7 @@
 					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">	
 						<label class="radio-inline col-xs-3 col-sm-3 col-md-3 col-lg-3">
 							<input type="radio" name="remunerado" id="remunerado" value="1" onchange="esconderValor();" <?php if(isset($vaga) && ($vaga->remunerado == '1')){ echo "checked"; } ?>> Remunerado
-							<input type="number" min="1"  name="valorRemunerado" id="valorRemunerado" class=" form-control" placeholder="0,00" value="<?php if(isset($vaga) && ($vaga->remunerado == '1')){ echo $vaga->valor_bolsa;} ?>" <?php if(isset($vaga) && ($vaga->remunerado == '1')){echo 'enable';}?>required="required" pattern="" title="" <?php if(isset($vaga) && ($vaga->remunerado == '1')){echo 'enable';} ?>>
+							<input type="number" min="1"  name="valorRemunerado" id="valorRemunerado" class=" form-control" placeholder="0,00" value="<?php if(isset($vaga) && ($vaga->remunerado == '1')){ echo $vaga->valor_bolsa;} ?>" <?php if(isset($vaga) && ($vaga->remunerado == '0')){echo 'disabled';}?> required="required" pattern="" title="">
 						</label>
 						<label class="radio-inline">
 							<input type="radio" name="remunerado" id="inlineRadio2" onchange="esconderValor();" value="0" <?php if(isset($vaga) && ($vaga->remunerado == '0')){ echo "checked"; } ?>> Não Remunerado
