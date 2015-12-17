@@ -22,7 +22,7 @@
 						<spam class="num-vagas"><?php echo $vaga->numero_vagas; ?></spam>
 					</a>
 					<div class="btn-group-vertical empresaBotao" role="group" aria-label="...">
-						<button type="button" class="btn btn-default">Editar</button>
+						<button type="button" class="btn btn-default" onClick="window.location='<?php echo site_url('extvagas/editarVaga/'.$vaga->id)?>'">Editar</button>
 						<div class="btn-group btn-group-justified" role="group" aria-label="...">
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default" onClick="window.location='<?php echo site_url('extvagas/excluirVaga/'.$vaga->id)?>'"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
@@ -70,7 +70,7 @@
 						<spam class="num-inscritos"><?php echo $vaga->numero_inscritos; ?></spam>
 					</a>
 					<div class="btn-group-vertical empresaBotao" role="group" aria-label="...">
-						<button type="button" class="btn btn-default">Editar</button>
+						<button type="button" class="btn btn-default" onClick="window.location='<?php echo site_url('extvagas/editarVaga/'.$vaga->id)?>'">Editar</button>
 						<div class="btn-group btn-group-justified" role="group" aria-label="...">
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default" onClick="window.location='<?php echo site_url('extvagas/excluirVaga/'.$vaga->id)?>'"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
