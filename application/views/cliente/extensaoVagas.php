@@ -5,6 +5,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-lg-offset-2">
+
 				<?php 
 				if(!empty($vagasNaoAprovadas)) :
 					foreach ($vagasNaoAprovadas as $vaga) : ?>
@@ -13,7 +14,7 @@
 				<div class="vagas">
 					<a href="">
 						<div class="sigla">
-							<span class="inset-text-effect"><?php echo $vaga->sigla_curso; ?></span>
+							<span class="inset-text-effect"><?php echo $vaga->sigla_curso;?></span>
 						</div>
 						<div class="vaga-descri">
 							<h3><?php echo $vaga->titulo; ?></h3>
@@ -51,7 +52,6 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-lg-offset-2">
-
 				<?php 
 				if(!empty($vagasAprovadas)) :
 					foreach ($vagasAprovadas as $vaga) :?>

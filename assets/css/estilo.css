@@ -388,3 +388,17 @@ body{
 	-webkit-background-size: 80px 80px;
 	background-size: 80px 80px;
 }
+
+.modal-header{
+	background-color: #68BD65;
+}
+.modal-header h3{
+	text-align: center;
+}
+.modal-body{
+	font-size: 1.2em;
+}
+.modal-footer{
+	background-color: #68BD65;
+}
+

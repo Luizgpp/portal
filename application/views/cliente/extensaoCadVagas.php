@@ -12,7 +12,6 @@
 				}
 				echo form_hidden('vagaid', $vaga->id);
 
-				
 				?>
 				<div class="form-group">
 					<legend>Cadastrar Vagas</legend>
