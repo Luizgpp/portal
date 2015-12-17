@@ -9,8 +9,8 @@ class Cadadm extends CI_Controller
 
 	}
 	function index() { 
-        
-        		
+
+
 		$this->load->view('layout/topoAdm');
 
 		$this->load->view('cliente/extensaoCadAdm');
@@ -24,17 +24,16 @@ class Cadadm extends CI_Controller
         $this->form_validation->set_message('is_unique', 'Campo ja cadastrado');
         
         if($this->form_validation->run() == FALSE){
-            
+
             $this->index();
         }
         else{
-            
-            ($this->cadadm_model->cadastrarAdm()
+
+            $this->cadadm_model->cadastrarAdm();
             $this->index();
 
-            
-     
-        
+
+        }
     }
 }
 ?>

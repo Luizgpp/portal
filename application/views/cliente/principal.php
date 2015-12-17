@@ -27,96 +27,60 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-			<select name="cursos" id="inputCursos" class="form-control select" required="required">
-				<option value="">Todos</option>
-				<option value="">TADS</option>
-				<option value="">MATE</option>
-				<option value="">EDIF</option>
-				<option value="">EVEN</option>
+			<?php echo form_open('Principal/pesquisa'); ?>
+			<select name="cursos" id="inputCursos" class="form-control select" >
+				<option value="0">Todos</option>
+				<option value="1">TADS</option>
+				<option value="2">INFO</option>
+				<option value="3">EDIF</option>
+				<option value="4">MAT</option>
+				<option value="5">EVEN</option>
 			</select>
 		</div>
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">			
-			<form action="" class="form" id="busca">
+			<div id="busca">
 				<div class="input-group">
-					<input type="search" name="" id="inputBusca" class="form-control input-lg" value="" required="required" title="">
+					<input type="search" name="pesquisa" id="inputBusca" class="form-control input-lg" value="" title="">
 					<span class="input-group-btn">
-						<button type="button" class="btn btn-default btn-lg">Buscar</button>
+						<button type="submit" class="btn btn-default btn-lg">Buscar</button>
 					</span>
 				</div>
-			</form>
-		</div>
+			</div>
+		</form>
 	</div>
-
-	<div class="row vagas-container corpo">
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+</div>
+<div class="row vagas-container corpo">
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<?php
+		$i = 0;
+		foreach ($vagas as $vaga) {
+			if(($i % 2) == 0){?>
 			<div class="vagas">
 				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
+					<span class="inset-text-effect"><?php echo $vaga['Sigla_Curso'] ?></span>
 				</div>
 
 				<div class="vaga-descri">
-<<<<<<< HEAD
 					<a href="#" idvaga ="<?php echo $vaga['id']?>" data-toggle="modal" class="modal1" data-target="#myModal">
 						<h3><?php echo $vaga['titulo'] ?></h3>
 						<spam><?php echo $vaga['nome'] ?> - <?php echo $vaga['sigla'] ?></spam>
 					</div>
 				</a>
 				<spam class="num-vagas"><?php echo $vaga['numero_vagas']; ?></spam>
-=======
-					<h3>Programador Chefe</h3>
-					<spam> Campos Do Jordão - IFSP</spam>
-				</div>
-				<spam class="num-vagas">2</spam>
 			</div>
-
-			<div class="vagas">
-				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
-				</div>
-				<div class="vaga-descri">
-					<h3>Programador Chefe</h3>
-					<p> Campos Do Jordão - IFSP</p>
-				</div>
-				<spam class="num-vagas">2</spam>
-			</div>
-
-			<div class="vagas">
-				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
-				</div>
-				<div class="vaga-descri">
-					<h3>Programador Chefe</h3>
-					<p> Campos Do Jordão - IFSP</p>
-				</div>
-				<spam class="num-vagas">2</spam>
-			</div>
-
-			<div class="vagas">
-				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
-				</div>
-				<div class="vaga-descri">
-					<h3>Programador Chefe</h3>
-					<p> Campos Do Jordão - IFSP</p>
-				</div>
-				<spam class="num-vagas">2</spam>
->>>>>>> origin/master
-			</div>
+			<?php }$i++;} ?>
 		</div>
 		<!-- fim coluna vagas 1 -->
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<div class="vagas">
-				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
-				</div>
-				<div class="vaga-descri">
-					<h3>Programador Chefe</h3>
-					<p> Campos Do Jordão - IFSP</p>
-				</div>
-				<spam class="num-vagas">2</spam>
-			</div>
+			<?php
+			$i = 0;
+			foreach ($vagas as $vaga) {
+				if(($i % 2) != 0){?>
+				<div class="vagas">
+					<div class="sigla">
+						<span class="inset-text-effect"><?php echo $vaga['Sigla_Curso'] ?></span>
+					</div>
 
-<<<<<<< HEAD
 					<div class="vaga-descri">
 
 						<a href="#" idvaga ="<?php echo $vaga['id']?>" data-toggle="modal" class="modal1" id="idModal" data-target="#myModal">
@@ -125,44 +89,13 @@
 						</div>
 					</a>
 					<spam class="num-vagas"><?php echo $vaga['numero_vagas']; ?></spam>
-=======
-			<div class="vagas">
-				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
 				</div>
-				<div class="vaga-descri">
-					<h3>Programador Chefe</h3>
-					<p> Campos Do Jordão - IFSP</p>
->>>>>>> origin/master
-				</div>
-				<spam class="num-vagas">2</spam>
-			</div>
+				<?php }$i++;}?>
 
-			<div class="vagas">
-				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
-				</div>
-				<div class="vaga-descri">
-					<h3>Programador Chefe</h3>
-					<p> Campos Do Jordão - IFSP</p>
-				</div>
-				<spam class="num-vagas">2</spam>
 			</div>
-
-			<div class="vagas">
-				<div class="sigla">
-					<span class="inset-text-effect">TADS</span>
-				</div>
-				<div class="vaga-descri">
-					<h3>Programador Chefe</h3>
-					<p> Campos Do Jordão - IFSP</p>
-				</div>
-				<spam class="num-vagas">2</spam>
-			</div>
+			<!-- fim coluna vagas 2 -->
 		</div>
-		<!-- fim coluna vagas 2 -->
 	</div>
-<<<<<<< HEAD
 
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -233,6 +166,3 @@
 			});    
 		});
 </script>
-=======
-</div>
->>>>>>> origin/master

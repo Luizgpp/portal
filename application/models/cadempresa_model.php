@@ -8,7 +8,7 @@ class Cadempresa_model extends CI_Model {
             'tipo' => 3,
             'email' => $this->input->post('email'),
             'senha' => md5(md5($this->input->post('conSenha')))
-        );
+            );
         
         $this->db->insert('usuarios', $usuario);
         $usuarioId = $this->db->insert_id();
@@ -18,7 +18,6 @@ class Cadempresa_model extends CI_Model {
             'razao_social' => $this->input->post('razaoSoci'),
             'nome_fantasia' => $this->input->post('nomeFanta'),
             'endereco' => $this->input->post('endereco').$this->input->post('numero').$this->input->post('bairro').$this->input->post('complemento'),
-            'uf_id' => $this->input->post('estado'),
             'cidade_id' => $this->input->post('cidade'),
             'cep' => preg_replace("/\D+/","",$this->input->post('cep')),
             'nome_contato' => $this->input->post('contato'),
@@ -26,7 +25,7 @@ class Cadempresa_model extends CI_Model {
             'senha' => md5(md5($this->input->post('conSenha'))),
             'usuarios_id' => $usuarioId
             
-        );   
+            );   
         $this->db->insert('empresas', $empresa);
         
     }
