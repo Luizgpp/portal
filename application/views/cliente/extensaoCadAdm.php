@@ -2,29 +2,30 @@
 	<div class="cadastro-vagas">
 		<div class="row">
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-				<form action="" method="POST" class="form-horizontal" role="form">
+				<?php echo validation_errors(); ?>
+                <?php echo form_open('cadadm/cadastrarAdm', 'class="form-horizontal"')  ?>
 					<div class="form-group">
 						<legend>Cadastrar Administrador</legend>
 					</div>
 					
 					<div class="form-group">
-						<label for="inputTituloVaga" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Prontuário</label>
+						<label for="prontuario" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Prontuário</label>
 						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-							<input type="text" name="tituloVaga" id="inputTituloVaga" class="form-control" placeholder="Título da Vaga" value="" required="required">
+							<input type="text" name="prontuario" id="prontuario" class="form-control"  required="required" data-mask="9999999">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="inputTituloVaga" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Nome</label>
+						<label for="nome" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Nome</label>
 						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-							<input type="text" name="tituloVaga" id="inputTituloVaga" class="form-control" placeholder="Título da Vaga" value="" required="required">
+							<input type="text" name="nome" id="nome" class="form-control"  required="required">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="inputTituloVaga" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Email</label>
+						<label for="email" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Email</label>
 						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-							<input type="text" name="tituloVaga" id="inputTituloVaga" class="form-control" placeholder="Título da Vaga" value="" required="required">
+							<input type="text" name="email" id="email" class="form-control"  required="required">
 						</div>
 					</div>
 
@@ -33,9 +34,10 @@
 							<button type="submit" class="btn btn-primary">Enviar</button>
 						</div>
 					</div>
-				</form>
+				<?php echo form_close(); ?>
 			</div>
 		</div>
 	</div>
 </div>
+
 </div>

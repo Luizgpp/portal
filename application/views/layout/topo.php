@@ -6,12 +6,14 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo(CSS. 'bootstrap.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo(CSS. 'estilo.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo(CSS. 'jasny-bootstrap.min.css') ?>">
 	<link async href="http://fonts.googleapis.com/css?family=Aladin" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	
 	<script src="<?php echo(JS. 'jquery-2.1.4.min.js'); ?>"></script>
 	<script src="<?php echo(JS. 'bootstrap.js'); ?>"></script>
 	<script src="<?php echo(JS. 'menufixedtop.js'); ?>"></script>
+    <script src="<?php echo(JS. 'jasny-bootstrap.min.js'); ?>"></script>
 	
 
 </head>
