@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Extvagas extends MY_Controller 
+class Extempresa extends MY_Controller 
 { 
 
 	public function __construct(){
@@ -12,15 +12,12 @@ class Extvagas extends MY_Controller
 
 	public function index() { 
 		$dados = array(
-			'vagasNaoAprovadas' => $this->extvaga_model->consultaVagasNaoAprovadas(),
-			'vagasAprovadas' => $this->extvaga_model->consultaVagasAprovadas(),
-			'vagasDesativadas' => $this->extvaga_model->consultaVagasDesativadas()
-			);
-
-		
+			'empresasNaoAprovadas' => $this->extvaga_model->consultaVagasNaoAprovadas(),
+			'empresasAprovadas' => $this->extvaga_model->consultaVagasAprovadas()
+			);		
 
 		$this->load->view('layout/topoADM');
-		$this->load->view('cliente/extensaoVagas', $dados);
+		$this->load->view('cliente/extensaoEmpresa');
 		$this->load->view('layout/rodape');
 
 	}
@@ -33,12 +30,6 @@ class Extvagas extends MY_Controller
 
 	public function excluirVaga($idVaga){
 		$this->extvaga_model->excluirVaga($idVaga);
-
-		redirect('extvagas','refresh');
-	}
-
-	public function ativarVaga($idVaga){
-		$this->extvaga_model->ativarVaga($idVaga);
 
 		redirect('extvagas','refresh');
 	}

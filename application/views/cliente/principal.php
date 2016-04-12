@@ -1,9 +1,13 @@
-
+					<?php 
+					if(isset($error)){
+						echo "<p class='alert alert-danger' align='center'>".$error ."</p>";
+					}
+					?>
 <div class="row menu" >
 	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 		<div class="btn-group  btn-group-justified" role="group" aria-label="...">
 			<div class="btn-group" role="group">
-				<button type="button" class="btn btn-success btn-lg">É Empresa? <p>Cadastre-se</p></button>
+				<button onclick="window.location='<?php echo site_URL('cadempresa'); ?>'" type="button" class="btn btn-success btn-lg">É Empresa? <p>Cadastre-se</p></button>
 			</div>
 			<div class="btn-group" role="group">
 				<button type="button" data-toggle="popover-cadastro-aluno" data-placement="bottom" class="btn btn-success btn-lg">É Aluno? <p>Cadastre-se</p></button>

@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Cadadm extends CI_Controller 
+class Cadadm extends MY_Controller 
 { 
 
 	public function __construct(){
@@ -31,8 +31,6 @@ class Cadadm extends CI_Controller
 
             $this->cadadm_model->cadastrarAdm();
             $this->index();
-
-
         }
     }
 }

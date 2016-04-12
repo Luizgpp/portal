@@ -10,8 +10,9 @@
 				}else{
 					echo form_open('cadvaga/cadastrar', 'class="form-horizontal" onsubmit="return verificaCheckBox()"'); 
 				}
-				echo form_hidden('vagaid', $vaga->id);
-
+				if(isset($vaga)){
+					echo form_hidden('vagaid', $vaga->id);
+				}
 				?>
 				<div class="form-group">
 					<legend>Cadastrar Vagas</legend>
@@ -71,9 +72,7 @@
 							<textarea name="outros" id="textareaDescricao" class="form-control" rows="4"><?php if(isset($vaga) && ($vaga->outros_beneficios != '')){echo $vaga->outros_beneficios;} ?></textarea>							
 						</label>						
 					</div>
-				</div>
-
-				
+				</div>				
 
 				<div class="form-group">
 					<label for="textareaDescricao" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Remuneração</label>

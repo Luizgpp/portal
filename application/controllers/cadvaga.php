@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Cadvaga extends CI_Controller 
+class Cadvaga extends MY_Controller 
 { 
 
 	public function __construct(){

@@ -23,7 +23,8 @@
 				<h1>Extensão</h1>
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<button type="button" class="btn btn-default">Logout</button>
+				<h4><?php echo $this->session->nome; ?></h4>
+				<a href="<?php echo site_url('login/logout'); ?>" type="button" data-placement="bottom" data-toggle="popover-login" data-html="true" id="btnlogin" class="btn btn-default">logout</a>
 			</div>
 		</div>
 	</div>
@@ -32,16 +33,16 @@
 		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 			<div class="btn-group  btn-group-justified" role="group" aria-label="...">
 				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-default btn-lg">Gerenciar Empresas</button>
+					<a href=" <?php echo site_URL('extempresa'); ?> " type="button" class="btn btn-default btn-lg">Gerenciar Empresas</a>
 				</div>
 				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-default btn-lg">Gerenciar Vagas</button>
+					<a href=" <?php echo site_URL('extvagas'); ?> " type="button" class="btn btn-default btn-lg">Gerenciar Vagas</a>
 				</div>
 				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-default btn-lg">Cadastrar Vagas</button>
+					<a href=" <?php echo site_URL('cadvaga'); ?> " type="button" class="btn btn-default btn-lg">Cadastrar Vagas</a>
 				</div>
 				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-default btn-lg">Cadastrar Administrador</button>
+					<a href=" <?php echo site_URL('cadadm'); ?> " type="button" class="btn btn-default btn-lg">Cadastrar Administrador</a>
 				</div>
 			</div>
 		</div>

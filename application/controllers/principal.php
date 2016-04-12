@@ -9,10 +9,9 @@ class Principal extends CI_Controller
 
 	}
 	function index() { 
-		
+
 		$this->load->view('layout/topo');
 		$dados = array('vagas' => $this->p->consultaTodasVagas());
-		//var_dump($dados);
 
 		$this->load->view('cliente/principal', $dados);
 		$this->load->view('layout/rodape');
