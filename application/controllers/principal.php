@@ -50,7 +50,7 @@ class Principal extends CI_Controller
 				'smtp_host' => 'ssl://smtp.googlemail.com',
 				'smtp_port' => 465,
 				'smtp_user' => 'natan.greghi@gmail.com', // change it to yours
-				'smtp_pass' => 'jamanta@1406', // change it to yours
+				'smtp_pass' => '', // change it to yours
 				'mailtype' => 'html',
 				'charset' => 'iso-8859-1',
 				'wordwrap' => TRUE
